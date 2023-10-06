@@ -1,98 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>Restaurant Page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="define author of the page -- your name">
-    <meta name="description" content="define a description of this page">
-    <meta name="keywords" content="define keywords for search engines">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="Description of this page">
+    <meta name="keywords" content="keywords for search engines">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 10px 0;
+        }
+        a.nav-link {
+            color: white;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .btn {
+            margin-top: 10px;
+        }
+        .input-group {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 <header>
-    <h1>
-        International Restaurants
-    </h1>
+    <h1>International Restaurants</h1>
     <nav class="navbar navbar-expand-lg navbar-inverse" aria-label="Main Navigation Bar">
         <div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li><a class="nav-link"  href = "index.html">Home</a></li>
-                <li><a class="nav-link"  href = "login.html">Login</a></li>
-                <li><a class="nav-link"  href = "restaurant.html">My Saved Restaurants</a></li>
-                <div class="input-group">
-
-                    <input type="search" placeholder="Search" id="form1" class="form-control rounded" />
-
-
-                    <button type="button" class="btn btn-outline-primary" >
-                                    <span  id="search-addon">
-                                    <i class="fas fa-search"></i>Search
-                                        </span>
-                    </button>
-                </div>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="restaurant.html">My Saved Restaurants</a></li>
             </ul>
+            <div class="input-group">
+                <input type="search" placeholder="Search" id="form1" class="form-control rounded" />
+                <button type="button" class="btn btn-outline-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
         </div>
     </nav>
 </header>
-    <div>
-        <section>
-            <h1>
-                My Saved Restaurants
-            </h1>
-            <div>
-                <h2>
-                    Restaurant 1
-                </h2>
-                <p>
-                    This is an example of where the description of a restaurant will go.
-                    Location: Lawn
-                    Hours: 9:00 AM - 5:00 PM
-                </p>
-                <button type="button" class="btn btn-outline-primary" >
-                                <span>
-                                <i class="fas fa-search"></i>Unsave
-                                    </span>
-                </button>
-            </div>
-            <div>
-                <h2>
-                    Restaurant 2
-                </h2>
-                <p>
-                    This is an example of where the description of a restaurant will go.
-                    Location: Lawn
-                    Hours: 9:00 AM - 5:00 PM
-                </p>
-                <button type="button" class="btn btn-outline-primary" >
-                                <span>
-                                <i class="fas fa-search"></i>Unsave
-                                    </span>
-                </button>
-            </div>
-            <div>
-                <h2>
-                    Restaurant 3
-                </h2>
-                <p>
-                    This is an example of where the description of a restaurant will go.
-                    Location: Lawn
-                    Hours: 9:00 AM - 5:00 PM
-                </p>
-                <button type="button" class="btn btn-outline-primary" >
-                                <span>
-                                <i class="fas fa-search"></i>Unsave
-                                    </span>
-                </button>
-            </div>
-        </section>
-    </div>
-
-
+<div class="container">
+    <section>
+        <h1>My Saved Restaurants</h1>
+        <div>
+            <h2>Restaurant 1</h2>
+            <p>
+                This is an example of where the description of a restaurant will go.<br>
+                Location: Lawn<br>
+                Hours: 9:00 AM - 5:00 PM
+            </p>
+            <button type="button" class="btn btn-outline-primary">
+                <i class="fas fa-search"></i> Unsave
+            </button>
+        </div>
+        <div>
+            <h2>Restaurant 2</h2>
+            <p>
+                This is an example of where the description of a restaurant will go.<br>
+                Location: Lawn<br>
+                Hours: 9:00 AM - 5:00 PM
+            </p>
+            <button type="button" class="btn btn-outline-primary">
+                <i class="fas fa-search"></i> Unsave
+            </button>
+        </div>
+        <div>
+            <h2>Restaurant 3</h2>
+            <p>
+                This is an example of where the description of a restaurant will go.<br>
+                Location: Lawn<br>
+                Hours: 9:00 AM - 5:00 PM
+            </p>
+            <button type="button" class="btn btn-outline-primary">
+                <i class="fas fa-search"></i> Unsave
+            </button>
+        </div>
+    </section>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
 </body>
 </html>
