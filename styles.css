@@ -1,59 +1,40 @@
-/* Reset some default styles */
-body, h1, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Set a background color and font for the whole page */
 body {
     background-color: antiquewhite;
     font-family: Arial, sans-serif;
 }
-
-/* Style the header */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: darkgrey;
+    color: white;
     text-align: center;
     padding: 20px 0;
 }
-
 h1 {
     margin: 0;
     font-size: 24px;
 }
-
-/* Style the navigation bar */
 nav {
-    background-color: #444;
+    background-color: dimgrey;
     text-align: center;
     padding: 10px 0;
 }
 
 a.nav-link {
-    color: #fff;
+    color: white;
     font-weight: bold;
 }
-
-/* Style the sections containing restaurant information */
 section {
     margin: 20px 0;
     padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
+    background-color: white;
     border-radius: 5px;
 }
-
 h2 {
     margin: 0;
     font-size: 20px;
 }
-
 p {
     margin-bottom: 10px;
 }
-
-/* Style the images within the restaurant sections */
 .media img {
     max-width: 100%;
     height: auto;
