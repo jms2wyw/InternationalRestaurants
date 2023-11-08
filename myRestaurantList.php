@@ -37,9 +37,15 @@
     <nav class="navbar navbar-expand-lg navbar-inverse" aria-label="Main Navigation Bar">
         <div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="https://cs4640.cs.virginia.edu/jms2wyw/sprint2/index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://cs4640.cs.virginia.edu/jms2wyw/sprint2/login.html">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://cs4640.cs.virginia.edu/jms2wyw/sprint2/myRestaurantList.html">My Saved Restaurants</a></li>
+                <form action="?command=index" method="post">
+                    <button class="nav-link" type="submit">Home</button>
+                </form>
+                <form action="?command=login" method="post">
+                    <button class="nav-link" type="submit">Login/Sign Up</button>
+                </form>
+                <form action="?command=userList" method="post">
+                    <button class="nav-link" type="submit">My Saved Restaurants</button>
+                </form>
             </ul>
             <div class="input-group">
                 <input type="search" placeholder="Search" id="form1" class="form-control rounded" />
@@ -47,47 +53,29 @@
                     <i class="fas fa-search"></i> Search
                 </button>
             </div>
+            <h2>Welcome <?=$uname?>! (<?=$email?>)</h2>
         </div>
     </nav>
 </header>
-<div class="container">
-    <section>
-        <h1>My Saved Restaurants</h1>
-        <div>
-            <h2>Restaurant 1</h2>
-            <p>
-                This is an example of where the description of a restaurant will go.<br>
-                Location: Lawn<br>
-                Hours: 9:00 AM - 5:00 PM
-            </p>
-            <button type="button" class="btn btn-outline-primary">
-                <i class="fas fa-search"></i> Unsave
-            </button>
-        </div>
-        <div>
-            <h2>Restaurant 2</h2>
-            <p>
-                This is an example of where the description of a restaurant will go.<br>
-                Location: Lawn<br>
-                Hours: 9:00 AM - 5:00 PM
-            </p>
-            <button type="button" class="btn btn-outline-primary">
-                <i class="fas fa-search"></i> Unsave
-            </button>
-        </div>
-        <div>
-            <h2>Restaurant 3</h2>
-            <p>
-                This is an example of where the description of a restaurant will go.<br>
-                Location: Lawn<br>
-                Hours: 9:00 AM - 5:00 PM
-            </p>
-            <button type="button" class="btn btn-outline-primary">
-                <i class="fas fa-search"></i> Unsave
-            </button>
-        </div>
-    </section>
-</div>
+<div class="media col-12">
+                <?php
+
+                    foreach ($savedRestaurants as $restaurant){
+                        echo "<form action='?command=unsaveRestaurant' method='post'><section>
+                        <input type='hidden' name='restaurantName' value='".$restaurant['restaurant']."'>
+                         <div class='media col-12'>
+                         <h1>".$restaurant["restaurant"]."<br>
+                         <p>" .$restaurant['description']."<br>". $restaurant['hours']."<br>". $restaurant['Address']."<br>
+                        </p>
+
+                        <button type='submit'>Unsave Restaurant</button>
+                        </div>
+                         </section>
+                         </form>";
+                    }
+                ?>
+            </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

@@ -64,9 +64,12 @@
     <nav class="navbar navbar-expand-lg navbar-inverse" aria-label="Main Navigation Bar">
         <div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="https://cs4640.cs.virginia.edu/jms2wyw/sprint2/index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://cs4640.cs.virginia.edu/jms2wyw/sprint2/login.html">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://cs4640.cs.virginia.edu/jms2wyw/sprint2/myRestaurantList.html">My Saved Restaurants</a></li>
+                <form action="?command=index" method="post">
+                          <button class="nav-link" type="submit">Home</button>
+                        </form>
+
+
+
             </ul>
         </div>
     </nav>
@@ -74,21 +77,26 @@
 <div>
     <section>
         <h1>Log In</h1>
+        <form action="?command=loggedIn" method="post">
         <div>
             <label for="uname">Username</label>
-            <input type="text" placeholder="Enter Username" id="uname" required>
+            <input type="text" placeholder="Enter Username" id="uname" name="uname"required>
         </div>
         <div>
             <label for="psw">Password</label>
-            <input type="password" placeholder="Enter Password" id="psw" required>
+            <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
         </div>
         <div>
             <button type="submit">Next</button>
         </div>
+        </form>
         <div class="or-divider">or</div>
         <div>
-            <button type="signup">Sign Up</button>
+            <form action="?command=signup" method="post">
+                <button type="submit">Create Account</button>
+            </form>
         </div>
+
     </section>
 </div>
 </body>

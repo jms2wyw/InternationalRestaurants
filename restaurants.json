@@ -1,0 +1,20 @@
+[
+  {
+    "restaurant": "Al Carbon",
+    "description": "Peruvian/Mexican Restaurant",
+    "hours": "11 AM - 9 PM",
+    "Address": "245 Merchant Walk Ave Suite 200, Charlottesville, VA 22902"
+  },
+  {
+    "restaurant": "M Sushi",
+    "description": "Japanese Restaurant",
+    "hours": "11 AM - 9:30 PM",
+    "Address": "171 Seminole Ct, Charlottesville, VA 22901"
+  },
+  {
+    "restaurant": "Zocalo",
+    "description": "Mexican/South American Restaurant",
+    "hours": "5:00 PM - 2:00 AM",
+    "Address": "201 E Main St Unit E, Charlottesville, VA 22902"
+  }
+]

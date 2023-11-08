@@ -1,4 +1,4 @@
-
+<!--https://cs4640.cs.virginia.edu/jms2wyw/sprint2/index.html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +22,17 @@
             <nav class="navbar navbar-expand-lg navbar-inverse" aria-label="Main Navigation Bar">
                 <div>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li><a class="nav-link"  href = "https://cs4640.cs.virginia.edu/jms2wyw/sprint2/index.html">Home</a></li>
-                        <li><a class="nav-link"  href = "https://cs4640.cs.virginia.edu/jms2wyw/sprint2/login.html">Login</a></li>
-                        <li><a class="nav-link"  href = "https://cs4640.cs.virginia.edu/jms2wyw/sprint2/myRestaurantList.html">My Saved Restaurants</a></li>
+                        <form action="?command=index" method="post">
+                            <button class="nav-link" type="submit">Home</button>
+                        </form>
+                        <form action="?command=login" method="post">
+                            <button class="nav-link" type="submit">Login/Sign Up</button>
+                        </form>
+                        <form action="?command=userList" method="post">
+                            <button class="nav-link" type="submit">My Saved Restaurants</button>
+                        </form>
+
+
                         <div class="input-group">
 
                                 <input type="search" placeholder="Search" id="form1" class="form-control rounded" />
@@ -36,6 +44,7 @@
                                     </span>
                             </button>
                         </div>
+                        <h2>Welcome <?=$uname?>! (<?=$email?>)</h2>
                     </ul>
                 </div>
             </nav>
@@ -43,59 +52,26 @@
 
     </div>
     <div>
-        <section>
             <div class="media col-12">
-                <a href="#">
-                    <img src="example.jpg" alt="picture of jose">
-                </a>
-                <h1>
-                    Jose's Restaurant
-                </h1>
-                <p>
-                    This is an example of where the description of a restaurant will go.
-                    Location: Lawn
-                    Hours: 9:00 AM - 5:00 PM
-                </p>
+                <?php
 
-            </div>
-        </section>
-    </div>
-    <div>
-        <section>
-            <div class="media col-12">
-                <a href="#">
-                    <img src="example.jpg" alt="picture of Laura">
-                </a>
-                <h1>
-                    Laura's Restaurant
-                </h1>
-                <p>
-                    This is an example of where the description of a restaurant will go.
-                    Location: Lawn
-                    Hours: 9:00 AM - 5:00 PM
-                </p>
+                    foreach ($restaurantList as $restaurant){
+                        echo "<form action='?command=saveRestaurant' method='POST'>
+                        <input type='hidden' name='restaurantName' value='".$restaurant['restaurant']."'>
+                        <section>
+                        <div class='media col-12'>
+                        <h1>".$restaurant['restaurant']. "</h1?>
+                        <p>" .$restaurant['description']."<br>". $restaurant['hours']."<br>". $restaurant['Address']."<br>
 
+                        </p>
+                        <button type='submit' >Save Restaurant</button>
+                        </div>
+                        </section>
+                        </form>";
+                    }
+                ?>
             </div>
-        </section>
-    </div>
-    <div>
-        <section>
-            <div class="media col-12">
-                <a href="#">
-                    <img src="example.jpg" alt="picture of example">
-                </a>
-                <h1>
-                    Example Restaurant
-                </h1>
-                <p>
-                    This is an example of where the description of a restaurant will go.
-                    Location: Lawn
-                    Hours: 9:00 AM - 5:00 PM
-                </p>
 
-            </div>
-        </section>
-    </div>
 
 
 
