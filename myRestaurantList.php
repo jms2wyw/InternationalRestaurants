@@ -41,7 +41,7 @@
                     <button class="nav-link" type="submit">Home</button>
                 </form>
                 <form action="?command=login" method="post">
-                    <button class="nav-link" type="submit">Login/Sign Up</button>
+                    <button class="nav-link" type="submit">Login/Log out</button>
                 </form>
                 <form action="?command=userList" method="post">
                     <button class="nav-link" type="submit">My Saved Restaurants</button>
@@ -61,20 +61,33 @@
                 <?php
 
                     foreach ($savedRestaurants as $restaurant){
-                        echo "<form action='?command=unsaveRestaurant' method='post'><section>
-                        <input type='hidden' name='restaurantName' value='".$restaurant['restaurant']."'>
+
+
+                        echo "<form name='deleteForm' action='/' onsubmit='return myFunction(this)' method='post'><section>
+                        <input type='hidden' id='restaurantName' name='restaurantName' value='".$restaurant['restaurant']."'>
                          <div class='media col-12'>
                          <h1>".$restaurant["restaurant"]."<br>
-                         <p>" .$restaurant['description']."<br>". $restaurant['hours']."<br>". $restaurant['Address']."<br>
+                         <p>" .$restaurant['description']."<br>". $restaurant['hours']."<br>". $restaurant['address']."<br>
                         </p>
 
-                        <button type='submit'>Unsave Restaurant</button>
+                        <button id='deleteBtn' name='deleteBtn' type='submit' >Delete Restaurant</button>
                         </div>
                          </section>
                          </form>";
                     }
                 ?>
             </div>
+            <script>
+
+                    function myFunction(form) {
+                        if(confirm("Are you sure you want to delete?")){
+                            form.action = "?command=unsaveRestaurant";
+                        }else{
+                            form.action = "?command=userList";
+                        }
+
+                    }
+                </script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

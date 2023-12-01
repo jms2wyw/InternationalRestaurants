@@ -57,6 +57,27 @@
             background-color: lightblue;
         }
     </style>
+    <script type = "text/javascript">
+        function validateForm() {
+            let x = document.forms["theForm"]["uname"].value;
+            let b = document.forms["theForm"]["email"].value;
+            let c = document.forms["theForm"]["psw"].value;
+            if (x == "") {
+                alert("Username must be filled out");
+                return false;
+              }
+              if (b == "") {
+                  alert("Email must be filled out");
+                return false;
+                }
+            if (c == "") {
+                alert("Password must be filled out");
+                return false;
+              }
+        }
+
+
+    </script>
 </head>
 <body>
 <header>
@@ -77,14 +98,23 @@
 <div>
     <section>
         <h1>Log In</h1>
-        <form action="?command=loggedIn" method="post">
+        <div class="row">
+            <div class="col-xs-12">
+            <?=$message?>
+            </div>
+        </div>
+        <form name="theForm" action="?command=loggedIn" onsubmit="return(validateForm());" method="post">
         <div>
             <label for="uname">Username</label>
-            <input type="text" placeholder="Enter Username" id="uname" name="uname"required>
+            <input type="text" placeholder="Enter Username" id="uname" name="uname">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="password" placeholder="Enter Email" id="email" name="email">
         </div>
         <div>
             <label for="psw">Password</label>
-            <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+            <input type="password" placeholder="Enter Password" id="psw" name="psw">
         </div>
         <div>
             <button type="submit">Next</button>
@@ -96,8 +126,26 @@
                 <button type="submit">Create Account</button>
             </form>
         </div>
+        <div>
+            <form name="something" id="something" action="/" method="post">
+
+                <button type="button" id="logouta" >Log Out</button>
+            </form>
+        </div>
 
     </section>
-</div>
+    </div>
+    <script>
+        document.getElementById("logouta").addEventListener("click", myFunction);
+
+        function myFunction() {
+            if(confirm("Are you sure you want to log out?")){
+                document.something.action = "?command=logout";
+                document.something.submit();
+            }
+
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

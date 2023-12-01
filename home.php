@@ -7,6 +7,8 @@ spl_autoload_register(function ($classname) {
     include "$classname.php";
 });
 
+
+
 $restaurant = new RestaurantController($_GET);
 
 $restaurant->run();
