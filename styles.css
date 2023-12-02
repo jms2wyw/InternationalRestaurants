@@ -1,40 +1,47 @@
 body {
-    background-color: antiquewhite;
-    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    font-family: 'Arial', sans-serif;
 }
+
 header {
-    background-color: darkgrey;
-    color: white;
+    background-color: #333;
+    color: #fff;
     text-align: center;
     padding: 20px 0;
 }
+
 h1 {
     margin: 0;
     font-size: 24px;
 }
+
 nav {
-    background-color: dimgrey;
+    background-color: #555;
     text-align: center;
     padding: 10px 0;
 }
 
 a.nav-link {
-    color: white;
+    color: #fff;
     font-weight: bold;
 }
+
 section {
     margin: 20px 0;
     padding: 20px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 5px;
 }
+
 h2 {
     margin: 0;
     font-size: 20px;
 }
+
 p {
     margin-bottom: 10px;
 }
+
 .media img {
     max-width: 100%;
     height: auto;
